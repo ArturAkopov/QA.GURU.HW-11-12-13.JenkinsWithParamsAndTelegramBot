@@ -8,6 +8,7 @@ import pages.PracticeFormPage;
 import utils.TestData;
 
 @Tag("form")
+@DisplayName("Тесты для формы регистрации https://demoqa.com/automation-practice-form")
 public class PracticeFormTests extends TestBase {
     PracticeFormPage steps = new PracticeFormPage();
     TestData testData = new TestData();
