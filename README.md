@@ -1,4 +1,4 @@
-# QA.GURU.HW-11.-Jenkins
+# QA.GURU.HW-11.Jenkins
 ## 11.Jenkins
 ### Домашнее задание №7
 
