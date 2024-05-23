@@ -103,6 +103,7 @@ public class PracticeFormPage {
 
     @Step("Ввод штата {state}")
     public PracticeFormPage setState(String state) {
+        stateInput.scrollIntoView(true);
         stateInput.click();
         stateAndCity.setStateOrCity(state);
         return this;
@@ -110,6 +111,7 @@ public class PracticeFormPage {
 
     @Step("Ввод города {city}")
     public PracticeFormPage setCity(String city) {
+        cityInput.scrollIntoView(true);
         cityInput.click();
         stateAndCity.setStateOrCity(city);
         return this;
@@ -117,6 +119,7 @@ public class PracticeFormPage {
 
     @Step("Подтверждение формы")
     public PracticeFormPage submitClick() {
+        submit.scrollIntoView(true);
         submit.click();
         return this;
     }
