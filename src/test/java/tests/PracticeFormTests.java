@@ -1,18 +1,21 @@
 package tests;
 
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.PracticeFormPage;
 import utils.TestData;
 
-
+@Tag("form")
 public class PracticeFormTests extends TestBase {
-    PracticeFormPage practiceFormPage = new PracticeFormPage();
+    PracticeFormPage steps = new PracticeFormPage();
     TestData testData = new TestData();
 
+    @DisplayName("Заполнение формы с полным набором параметров")
     @Test
     void fullFillFormTest() {
-        practiceFormPage.openPage()
+        steps.openPage()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setEmail(testData.email)
@@ -38,9 +41,10 @@ public class PracticeFormTests extends TestBase {
                 .checkResult("State and City", testData.state + " " + testData.city);
     }
 
+    @DisplayName("Заполнение формы с минимальным набором параметров")
     @Test
     void shortFillFormTest() {
-        practiceFormPage.openPage()
+        steps.openPage()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setGender(testData.gender)
@@ -53,9 +57,10 @@ public class PracticeFormTests extends TestBase {
                 .checkResult("Date of Birth", testData.calendarDay + " " + testData.calendarMonth + ',' + testData.calendarYear);
     }
 
+    @DisplayName("Заполнение формы с некорректным набором параметров")
     @Test
     void incorrectFillFormTest() {
-        practiceFormPage.openPage()
+        steps.openPage()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setGender(testData.gender)
